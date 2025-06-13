@@ -1,20 +1,25 @@
 package model.entiites;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Installment {
 	
-     private Date dueDate;
-     private Double amount;
-	public Installment(Date dueDate, Double amount) {
-		super();
+	private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
+    private LocalDate dueDate;
+    private Double amount;
+     
+	public Installment(LocalDate dueDate, Double amount) {
 		this.dueDate = dueDate;
 		this.amount = amount;
 	}
-	public Date getDueDate() {
+	
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(Date dueDate) {
+	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
 	public Double getAmount() {
@@ -24,6 +29,15 @@ public class Installment {
 		this.amount = amount;
 	}
      
-     
+    public double numeroParcelas(double amount, double parc) {
+    	return amount / parc;
+    }
 
+	@Override
+	public String toString() {
+		return dueDate.format(dtf) + " - " + String.format("%.2f", amount);
+	} 
+
+    
+    
 }

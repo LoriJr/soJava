@@ -1,0 +1,7 @@
+package services;
+
+public interface FormaGeometrica {
+
+	double calcularArea();
+	double calcularPerimetro();
+}

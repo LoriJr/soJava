@@ -47,6 +47,7 @@ public class Program {
 		System.out.println("1 - Boleto Bancário");
 		System.out.println("2 - Cartão de Crédito");
 		System.out.println("3 - Pix");
+		System.out.println("4 - Dinheiro");
 		
 		int opcao = sc.nextInt();
 		String formaPag = "";
@@ -54,6 +55,7 @@ public class Program {
 		if(opcao == 1) {formaPag = "BOLETO_BANCARIO";}
 		if(opcao == 2) {formaPag = "CARTAO_CREDITO";}
 		if(opcao == 3) {formaPag = "PIX";}
+		if(opcao == 4) {formaPag = "DINHEIRO";}
 		
 		
 		OrdemPedido op = new OrdemPedido(1208, LocalDate.now(), TipoPagamento.valueOf(formaPag));

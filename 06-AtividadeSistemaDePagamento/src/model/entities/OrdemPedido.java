@@ -7,6 +7,7 @@ import java.util.List;
 import model.enums.TipoPagamento;
 import model.services.BoletoBancario;
 import model.services.CartaoCredito;
+import model.services.Dinheiro;
 import model.services.Pagamento;
 import model.services.Pix;
 
@@ -97,6 +98,8 @@ public class OrdemPedido {
 				return new BoletoBancario();
 			case PIX:				
 				return new Pix();
+			case DINHEIRO:
+				return new Dinheiro();
 			default:
 				throw new IllegalArgumentException("Tipo de pagamento inválido");
 		}

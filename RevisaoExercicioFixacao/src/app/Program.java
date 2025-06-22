@@ -24,10 +24,13 @@ public class Program {
 		LocalDate date = LocalDate.parse(sc.nextLine(), dtf);
 		System.out.print("Valor do contrato: ");
 		double valor = sc.nextDouble();
+		
+		Contract contrato = new Contract(contractNumber, date, valor);
+		
 		System.out.print("Número de parcelas: ");
 		int numParc = sc.nextInt();
 		
-		Contract contrato = new Contract(contractNumber, date, valor);
+		
 		
 		
 		

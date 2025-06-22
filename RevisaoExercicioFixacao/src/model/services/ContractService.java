@@ -11,7 +11,8 @@ public class ContractService {
 	}
 
 	public void processContract(Contract contrato, int months) {
-
+		
+		
 	}
 
 }

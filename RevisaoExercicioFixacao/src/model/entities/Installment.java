@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class Installment {
 	
 	private LocalDate date;
-	private double amoun;
-	public Installment(LocalDate date, double amoun) {
+	private double amount;
+	public Installment(LocalDate date, double amount) {
 		super();
 		this.date = date;
-		this.amoun = amoun;
+		this.amount = amount;
 	}
 	public LocalDate getDate() {
 		return date;
@@ -17,11 +17,15 @@ public class Installment {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public double getAmoun() {
-		return amoun;
+	public double getamountt() {
+		return amount;
 	}
-	public void setAmoun(double amoun) {
-		this.amoun = amoun;
+	public void setamount(double amount) {
+		this.amount = amount;
+	}
+	@Override
+	public String toString() {
+		return date + " - " + String.format("%.2f", amount );
 	}
 	
 	

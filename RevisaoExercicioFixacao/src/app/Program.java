@@ -6,6 +6,9 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import model.entities.Contract;
+import model.entities.Installment;
+import model.services.ContractService;
+import model.services.PaypalService;
 
 public class Program {
 
@@ -30,9 +33,15 @@ public class Program {
 		System.out.print("Número de parcelas: ");
 		int numParc = sc.nextInt();
 		
+		ContractService contratoServico = new ContractService(new PaypalService());
 		
+		contratoServico.processContract(contrato, numParc);
 		
+		System.out.println("Parcelas:");
 		
+		for(Installment installment: contrato.getList()) {
+			System.out.println(installment);
+		}
 		
 		sc.close();
 
